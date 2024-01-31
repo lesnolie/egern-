@@ -1,61 +1,69 @@
-﻿url_rewrites:
+url_rewrites:
   - match: "^https?:\\/\\/.+\\.pangolin-sdk-toutiao\\.com\\/api\\/ad\\/union\\/sdk\\/(get_ads|stats|settings)\\/"
-    location: "reject"
+    location: "http://reject/"
     status_code: 307
   - match: "^https?:\\/\\/.+\\.pglstatp-toutiao\\.com\\/.+\\/toutiao\\.mp4"
-    location: "reject"
+    location: "http://reject/"
     status_code: 307
   - match: "^https?:\\/\\/.+\\.(pglstatp-toutiao|pstatp)\\.com\\/(obj|img)\\/(ad-app-package|ad)\\/.+"
-    location: "reject"
+    location: "http://reject/"
     status_code: 307
   - match: "^https?:\\/\\/.+\\.(pglstatp-toutiao|pstatp)\\.com\\/(obj|img)\\/web\\.business\\.image\\/.+"
-    location: "reject"
+    location: "http://reject/"
     status_code: 307
   - match: "^https?:\\/\\/.+\\.(pglstatp-toutiao|pstatp)\\.com\\/obj\\/ad-pattern\\/renderer"
-    location: "reject"
+    location: "http://reject/"
     status_code: 307
   - match: "^https?:\\/\\/gurd\\.snssdk\\.com\\/src\\/server\\/v3\\/package"
-    location: "reject"
+    location: "http://reject/"
     status_code: 307
   - match: "^https?:\\/\\/.+\\.byteimg.com/tos-cn-i-1yzifmftcy\\/(.+)-jpeg\\.jpeg"
-    location: "reject"
+    location: "http://reject/"
     status_code: 307
   - match: "^https?:\\/\\/.+\\.pstatp\\.com\\/obj\\/mosaic-legacy\\/.+\\?from\\=ad"
-    location: "reject"
+    location: "http://reject/"
     status_code: 307
   - match: "^https?:\\/\\/.+\\.pstatp\\.com\\/bytecom\\/resource\\/track-log\\/src\\/.+"
-    location: "reject"
+    location: "http://reject/"
     status_code: 307
   - match: "^https?:\\/\\/.+\\.snssdk\\.com\\/video\\/play\\/1\\/toutiao\\/.+\\/mp4"
-    location: "reject"
+    location: "http://reject/"
     status_code: 307
   - match: "^https?:\\/\\/.+\\.snssdk.com\\/api\\/ad\\/.+"
-    location: "reject"
+    location: "http://reject/"
     status_code: 307
   - match: "^http:\\/\\/.+\\.byteimg\\.com\\/ad-app-package"
-    location: "reject"
+    location: "http://reject/"
     status_code: 307
   - match: "^http:\\/\\/.+\\.byteimg\\.com\\/web\\.business\\.image"
-    location: "reject"
+    location: "http://reject/"
     status_code: 307
   - match: "^https?:\\/\\/.+?\\.snssdk\\.com\\/motor\\/operation\\/activity\\/display\\/config\\/V2\\/"
-    location: "reject"
+    location: "http://reject/"
     status_code: 307
-  - match: "(?<=_region=)CN(?=&)"
-    location: 'JP'
+  - match: "(?i)\\btc\\.qq\\.com\\/[\\w\\/\\.-]+[a-z]\\d+\\.mp4\\?"
+    location: 'http://reject/'
     status_code: 307
-  - match: "(?<=&mcc_mnc=)4"
-    location: '2'
+  - match: "^https:\\/\\/god\\.gameyw\\.netease\\.com\\/v1\\/ad\\/.*"
+    location: 'http://reject/'
     status_code: 307
-  - match: "^(https?:\\/\\/(tnc|dm)[\\w-]+\\.\\w+\\.com\\/.+)(\\?)(.+)"
-    location: '$1$3'
-    status_code: 302
-  - match: "(^https?:\\/\\/*\\.\\w{4}okv.com\\/.+&.+)(\\d{2}\\.3\\.\\d)(.+)"
-    location: '$118.0$3'
-    status_code: 302
-
+  - match: "^https?:\\/\\/ads-img-al\\.xhscdn\\.com\\/hera/"
+    location: 'http://reject/'
+    status_code: 307
+  - match: "^https?:\\/\\/cdn\\.fivecdm\\.com\\/cr/"
+    location: 'http://reject/'
+    status_code: 307
+  - match: "^https?:\\/\\/m\\d\\.amap\\.com\\/ws\\/message\\/notice\\/list?"
+    location: 'http://reject/'
+    status_code: 307
+  - match: "^https?:\\/\\/sns\\.amap\\.com\\/ws\\/msgbox\\/pull?"
+    location: 'http://reject/'
+    status_code: 307
+  - match: "^https?:\\/\\/ssp\\.dzh\\.com\\.cn\\/v2api\\/adgroupjson"
+    location: 'http://reject/'
+    status_code: 307
 mitm:
-  hostnames: 
+  hostnames:
     - '*.pangolin-sdk-toutiao'
     - '*.pangolin-sdk-toutiao.*'
     - '*.pstatp.com'
